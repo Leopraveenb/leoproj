@@ -1,0 +1,169 @@
+{
+  "config": {
+    "rootDir": "D:/PlaywrightN/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ],
+      [
+        "dot"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "D:/PlaywrightN/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "D:/PlaywrightN/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.51.0",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "first.test.ts",
+      "file": "first.test.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "has title",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1947,
+                  "error": {
+                    "message": "Error: page.goto: net::ERR_CONNECTION_RESET at https://playwright.dev/\nCall log:\n\u001b[2m  - navigating to \"https://playwright.dev/\", waiting until \"load\"\u001b[22m\n",
+                    "stack": "Error: page.goto: net::ERR_CONNECTION_RESET at https://playwright.dev/\nCall log:\n\u001b[2m  - navigating to \"https://playwright.dev/\", waiting until \"load\"\u001b[22m\n\n    at D:\\PlaywrightN\\tests\\first.test.ts:4:14",
+                    "location": {
+                      "file": "D:\\PlaywrightN\\tests\\first.test.ts",
+                      "column": 14,
+                      "line": 4
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 2 |\u001b[39m\n \u001b[90m 3 |\u001b[39m test(\u001b[32m'has title'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'https://playwright.dev/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 5 |\u001b[39m   \u001b[90m// Expect a title \"to contain\" a substring.\u001b[39m\n \u001b[90m 6 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[35m/Playwright/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m   \u001b[90m// await page.pause();\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\PlaywrightN\\tests\\first.test.ts",
+                        "column": 14,
+                        "line": 4
+                      },
+                      "message": "Error: page.goto: net::ERR_CONNECTION_RESET at https://playwright.dev/\nCall log:\n\u001b[2m  - navigating to \"https://playwright.dev/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 2 |\u001b[39m\n \u001b[90m 3 |\u001b[39m test(\u001b[32m'has title'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 4 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'https://playwright.dev/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 5 |\u001b[39m   \u001b[90m// Expect a title \"to contain\" a substring.\u001b[39m\n \u001b[90m 6 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[35m/Playwright/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m   \u001b[90m// await page.pause();\u001b[39m\u001b[0m\n\u001b[2m    at D:\\PlaywrightN\\tests\\first.test.ts:4:14\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-03-12T13:26:51.737Z",
+                  "attachments": [
+                    {
+                      "name": "_prompt-0",
+                      "contentType": "text/markdown",
+                      "body": "IyBJbnN0cnVjdGlvbnMKCi0gRm9sbG93aW5nIFBsYXl3cmlnaHQgdGVzdCBmYWlsZWQuCi0gRXhwbGFpbiB3aHksIGJlIGNvbmNpc2UsIHJlc3BlY3QgUGxheXdyaWdodCBiZXN0IHByYWN0aWNlcy4KLSBQcm92aWRlIGEgc25pcHBldCBvZiBjb2RlIHdpdGggdGhlIGZpeCwgaWYgcG9zc2libGUuCgojIFRlc3QgaW5mbwoKLSBOYW1lOiBoYXMgdGl0bGUKLSBMb2NhdGlvbjogRDpcUGxheXdyaWdodE5cdGVzdHNcZmlyc3QudGVzdC50czozOjUKCiMgRXJyb3IgZGV0YWlscwoKYGBgCkVycm9yOiBwYWdlLmdvdG86IG5ldDo6RVJSX0NPTk5FQ1RJT05fUkVTRVQgYXQgaHR0cHM6Ly9wbGF5d3JpZ2h0LmRldi8KQ2FsbCBsb2c6CiAgLSBuYXZpZ2F0aW5nIHRvICJodHRwczovL3BsYXl3cmlnaHQuZGV2LyIsIHdhaXRpbmcgdW50aWwgImxvYWQiCgogICAgYXQgRDpcUGxheXdyaWdodE5cdGVzdHNcZmlyc3QudGVzdC50czo0OjE0CmBgYAoKIyBQYWdlIHNuYXBzaG90CgpgYGB5YW1sCi0gaGVhZGluZyAiVGhpcyBzaXRlIGNhbuKAmXQgYmUgcmVhY2hlZCIgW2xldmVsPTFdCi0gcGFyYWdyYXBoOiBUaGUgY29ubmVjdGlvbiB3YXMgcmVzZXQuCi0gcGFyYWdyYXBoOiAiVHJ5OiIKLSBsaXN0OgogIC0gbGlzdGl0ZW06IENoZWNraW5nIHRoZSBjb25uZWN0aW9uCiAgLSBsaXN0aXRlbToKICAgIC0gbGluayAiQ2hlY2tpbmcgdGhlIHByb3h5IGFuZCB0aGUgZmlyZXdhbGwiCiAgLSBsaXN0aXRlbToKICAgIC0gbGluayAiUnVubmluZyBXaW5kb3dzIE5ldHdvcmsgRGlhZ25vc3RpY3MiCi0gdGV4dDogRVJSX0NPTk5FQ1RJT05fUkVTRVQKLSBidXR0b24gIlJlbG9hZCIKLSBidXR0b24gIkRldGFpbHMiCmBgYAoKIyBUZXN0IHNvdXJjZQoKYGBgdHMKICAgMSB8IGltcG9ydCB7IGV4cGVjdCx0ZXN0IH0gZnJvbSAiQHBsYXl3cmlnaHQvdGVzdCI7CiAgIDIgfAogICAzIHwgdGVzdCgnaGFzIHRpdGxlJywgYXN5bmMgKHsgcGFnZSB9KSA9PiB7Cj4gIDQgfCAgIGF3YWl0IHBhZ2UuZ290bygnaHR0cHM6Ly9wbGF5d3JpZ2h0LmRldi8nKTsKICAgICB8ICAgICAgICAgICAgICBeIEVycm9yOiBwYWdlLmdvdG86IG5ldDo6RVJSX0NPTk5FQ1RJT05fUkVTRVQgYXQgaHR0cHM6Ly9wbGF5d3JpZ2h0LmRldi8KICAgNSB8ICAgLy8gRXhwZWN0IGEgdGl0bGUgInRvIGNvbnRhaW4iIGEgc3Vic3RyaW5nLgogICA2IHwgICBhd2FpdCBleHBlY3QocGFnZSkudG9IYXZlVGl0bGUoL1BsYXl3cmlnaHQvKTsKICAgNyB8ICAgLy8gYXdhaXQgcGFnZS5wYXVzZSgpOwogICA4IHwgfSk7CiAgIDkgfCB0ZXN0KCdoYXMgbGV0Y29kZScsIGFzeW5jICh7IHBhZ2UgfSkgPT4gewogIDEwIHwgICBhd2FpdCBwYWdlLmdvdG8oJ2h0dHBzOi8vbGV0Y29kZS5pbi8nKTsKICAxMSB8ICAgYXdhaXQgZXhwZWN0KHBhZ2UpLnRvSGF2ZVVSTCgiaHR0cHM6Ly9sZXRjb2RlLmluLyIpOwogIDEyIHwgICAvLyBhd2FpdCBwYWdlLnBhdXNlKCk7CiAgMTMgfCB9KTsKYGBg"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\PlaywrightN\\tests\\first.test.ts",
+                    "column": 14,
+                    "line": 4
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6b447037608db51f3257-544cc5bef0a2f13634ac",
+          "file": "first.test.ts",
+          "line": 3,
+          "column": 5
+        },
+        {
+          "title": "has letcode",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3843,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-03-12T13:26:56.286Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6b447037608db51f3257-cb4577bdc23beac56f2d",
+          "file": "first.test.ts",
+          "line": 9,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-03-12T13:26:49.938Z",
+    "duration": 11193.841999999999,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

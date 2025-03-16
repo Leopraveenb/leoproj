@@ -1,0 +1,54 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: jjjtc1
+- Location: D:\PlaywrightN\tests\Input\Input.test.ts:3:5
+
+# Error details
+
+```
+Error: browserType.launch: Target page, context or browser has been closed
+Browser logs:
+
+<launching> C:\Users\leo\AppData\Local\ms-playwright\firefox-1475\firefox\firefox.exe -no-remote -wait-for-browser -foreground -profile C:\Users\leo\AppData\Local\Temp\playwright_firefoxdev_profile-qRnaE2 -juggler-pipe -silent
+<launched> pid=73888
+[pid=73888] <process did exit: exitCode=255, signal=null>
+[pid=73888] starting temporary directories cleanup
+Call log:
+  - <launching> C:\Users\leo\AppData\Local\ms-playwright\firefox-1475\firefox\firefox.exe -no-remote -wait-for-browser -foreground -profile C:\Users\leo\AppData\Local\Temp\playwright_firefoxdev_profile-qRnaE2 -juggler-pipe -silent
+  - <launched> pid=73888
+  - [pid=73888] <process did exit: exitCode=255, signal=null>
+  - [pid=73888] starting temporary directories cleanup
+
+```
+
+# Test source
+
+```ts
+   1 | import test, { chromium, expect } from "@playwright/test";
+   2 |
+>  3 | test('jjjtc1',async({page})=>{
+     |     ^ Error: browserType.launch: Target page, context or browser has been closed
+   4 |     await page.goto("https://letcode.in/edit");
+   5 |     //fill normal
+   6 |     await page.fill("input#fullName","leo");
+   7 |     await page.waitForTimeout(3000);
+   8 |     await page.fill("input[id='fullName']","leo");
+   9 |     //Append with type methodenp
+  10 |     await page.focus("input[id='join']");
+  11 |     await page.keyboard.press("End");
+  12 |     const ele=await page.$('#join');
+  13 |     // ele?.type(" leo");
+  14 |     const text=await page.getAttribute("#getMe","value");
+  15 |     console.log(text);
+  16 |     expect(text).toBe("ortonikc")
+  17 |     await page.waitForTimeout(3000);
+  18 |     await page.waitForTimeout(3000);
+  19 |     //  await page.pause();
+  20 | })
+```

@@ -1,0 +1,50 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: jjjtc1
+- Location: D:\PlaywrightN\tests\Input\Input.test.ts:3:5
+
+# Error details
+
+```
+Error: browserType.launch: Executable doesn't exist at C:\Users\leo\AppData\Local\ms-playwright\webkit-2140\Playwright.exe
+╔═════════════════════════════════════════════════════════════════════════╗
+║ Looks like Playwright Test or Playwright was just installed or updated. ║
+║ Please run the following command to download new browsers:              ║
+║                                                                         ║
+║     npx playwright install                                              ║
+║                                                                         ║
+║ <3 Playwright Team                                                      ║
+╚═════════════════════════════════════════════════════════════════════════╝
+```
+
+# Test source
+
+```ts
+   1 | import test, { chromium, expect } from "@playwright/test";
+   2 |
+>  3 | test('jjjtc1',async({page})=>{
+     |     ^ Error: browserType.launch: Executable doesn't exist at C:\Users\leo\AppData\Local\ms-playwright\webkit-2140\Playwright.exe
+   4 |     await page.goto("https://letcode.in/edit");
+   5 |     //fill normal
+   6 |     await page.fill("input#fullName","leo");
+   7 |     await page.waitForTimeout(3000);
+   8 |     await page.fill("input[id='fullName']","leo");
+   9 |     //Append with type methodenp
+  10 |     await page.focus("input[id='join']");
+  11 |     await page.keyboard.press("End");
+  12 |     const ele=await page.$('#join');
+  13 |     // ele?.type(" leo");
+  14 |     const text=await page.getAttribute("#getMe","value");
+  15 |     console.log(text);
+  16 |     expect(text).toBe("ortonikc")
+  17 |     await page.waitForTimeout(3000);
+  18 |     await page.waitForTimeout(3000);
+  19 |     //  await page.pause();
+  20 | })
+```
