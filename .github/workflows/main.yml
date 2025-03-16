@@ -31,10 +31,9 @@ jobs:
       - name: Run Playwright tests with Allure Reporter
         run: npx playwright test Input.test --headed --reporter=allure-playwright
 
-      - name: Install Allure Commandline
-        run: |
-          choco install allure-commandline -y  # Install Allure CLI via Chocolatey (for Windows)
-        
+      - name: Install Allure Commandline using npm
+        run: npm install -g allure-commandline --save-dev
+
       - name: Generate Allure Report
         run: |
           allure generate allure-results --clean -o allure-report
