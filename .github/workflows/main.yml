@@ -11,7 +11,7 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: windows-latest
+    runs-on: ubuntu-latest  # We are using a Linux runner here for Docker compatibility
 
     steps:
       - name: Checkout code
@@ -31,13 +31,18 @@ jobs:
       - name: Run Playwright tests with Allure Reporter
         run: npx playwright test Input.test --headed --reporter=allure-playwright
 
-      - name: Install Allure Commandline using npm
+      - name: Install Allure Commandline via npm
         run: npm install -g allure-commandline --save-dev
 
       - name: Generate Allure Report
         run: |
           allure generate allure-results --clean -o allure-report
         working-directory: ${{ github.workspace }}
+
+      - name: Run Allure Server in Docker (Optional)
+        run: |
+          docker run -d -p 8080:8080 -v $(pwd)/allure-report:/allure-report allure/allure
+        continue-on-error: true  # Continue running even if this fails (optional)
 
       - name: Upload Allure Report as Artifact
         if: ${{ !cancelled() }}
