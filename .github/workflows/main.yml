@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main, master ]
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/5 * * * *'  # Runs every 5 minutes
 
 jobs:
   test:
@@ -31,6 +31,10 @@ jobs:
       - name: Run Playwright tests with Allure Reporter
         run: npx playwright test Input.test --headed --reporter=allure-playwright
 
+      - name: Install Allure Commandline
+        run: |
+          choco install allure-commandline -y  # Install Allure CLI via Chocolatey (for Windows)
+        
       - name: Generate Allure Report
         run: |
           allure generate allure-results --clean -o allure-report
