@@ -32,7 +32,6 @@ test.describe('Redo Shortcut Tests', () => {
         
         // Verify text after undo
         currentValue = await inputField.inputValue();
-        console.log("After undo:", currentValue);
         
         // Perform redo (Ctrl+Y)
         await page.keyboard.press("Control+y");
@@ -40,7 +39,6 @@ test.describe('Redo Shortcut Tests', () => {
         
         // Verify text after redo
         currentValue = await inputField.inputValue();
-        console.log("After redo:", currentValue);
         expect(currentValue).toBe("Modified Text");
     });
     
@@ -74,7 +72,6 @@ test.describe('Redo Shortcut Tests', () => {
         
         // Verify text after redo
         currentValue = await inputField.inputValue();
-        console.log("After redo with Ctrl+Shift+Z:", currentValue);
         expect(currentValue).toBe("New Content");
     });
     
@@ -108,14 +105,12 @@ test.describe('Redo Shortcut Tests', () => {
         await page.waitForTimeout(500);
         
         currentValue = await inputField.inputValue();
-        console.log("After 2 undos:", currentValue);
         
         // Redo once
         await page.keyboard.press("Control+y");
         await page.waitForTimeout(500);
         
         currentValue = await inputField.inputValue();
-        console.log("After 1 redo:", currentValue);
         expect(currentValue).toBe("Version 2");
         
         // Redo again
@@ -123,7 +118,6 @@ test.describe('Redo Shortcut Tests', () => {
         await page.waitForTimeout(500);
         
         currentValue = await inputField.inputValue();
-        console.log("After 2 redos:", currentValue);
         expect(currentValue).toBe("Version 3");
     });
 });
